@@ -43,11 +43,8 @@
     #logo {
         font-size: 30px;
         color: #fff;
+        font-weight: 600;
     }
-
-        #logo:hover {
-            cursor: pointer;
-        }
 
     .navitems {
         display: flex;
@@ -57,7 +54,7 @@
             color: #fff;
             margin-left: 60px;
             font-size: 17.5px;
-            font-weight: 600px;
+            font-weight: 600;
         }
 
             .navitems a:hover {
@@ -155,7 +152,7 @@
     * Footer
 */
 
-.add-info {
+footer {
     background: #28282b;
     height: 75px;
     width: 100%;
@@ -168,7 +165,7 @@
     border-bottom: 2px solid grey;
 }
 
-    .add-info p {
+    footer p {
         color: #fff;
         font-size: 18px;
         justify-content: center;
