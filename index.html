@@ -86,6 +86,19 @@
       z-index: 10;
     }
 
+    .blink {
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      51%, 100% {
+        opacity: 0;
+      }
+    }
+
     @media (max-width: 480px) {
       body {
         padding-top: 12px;
@@ -100,13 +113,6 @@
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .warning-box,
-      h1,
-      .blink {
-        animation: none;
-      }
-    }
   </style>
 </head>
 
@@ -120,7 +126,7 @@
       &gt; Downloading passwords...<br>
       &gt; Uploading browser history...<br>
       &gt; Encrypting personal files...<br>
-      &gt; Status: COMPLETE_
+      &gt; Status: COMPLETE<span class="blink">_</span>
     </div>
   </main>
 
