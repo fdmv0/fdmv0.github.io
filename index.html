@@ -1,105 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Safety Demo</title>
 
-    <!-- CSS Document -->
-    <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: black;
+      color: red;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      overflow-x: hidden;
+      padding: 24px 12px 120px;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(255, 0, 0, 0.08),
+          rgba(255, 0, 0, 0.08) 2px,
+          transparent 2px,
+          transparent 4px
+        );
+    }
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/d2f25c6c57.js" crossorigin="anonymous"></script>
+    .warning-box {
+      width: min(92vw, 900px);
+      margin: 40px auto 20px;
+      padding: clamp(20px, 5vw, 45px);
+      background: #111;
+      border: clamp(3px, 1vw, 5px) dashed red;
+      box-shadow: 0 0 30px red;
+      animation: flicker 0.15s infinite alternate;
+    }
 
+    .skull {
+      font-size: clamp(3rem, 14vw, 5rem);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 10vw, 4rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      word-break: balance;
+      text-shadow:
+        0 0 10px red,
+        0 0 20px orange,
+        3px 3px 0 black;
+      animation: shake 0.4s infinite;
+    }
+
+    .fake-terminal {
+      width: min(100%, 700px);
+      margin: 28px auto 0;
+      padding: clamp(14px, 4vw, 22px);
+      color: #00ff00;
+      background: black;
+      border: 2px solid #00ff00;
+      box-shadow: 0 0 15px #00ff00;
+      text-align: left;
+      font-size: clamp(0.85rem, 3.4vw, 1.1rem);
+      line-height: 1.6;
+      overflow-wrap: break-word;
+    }
+
+    .blink {
+      animation: blink 0.7s infinite;
+    }
+
+    .reassurance {
+      position: fixed;
+      left: 50%;
+      bottom: max(16px, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      width: min(92vw, 850px);
+      padding: 14px 18px;
+      color: white;
+      background: #003300;
+      border: 2px solid #00ff00;
+      box-shadow: 0 0 15px #00ff00;
+      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+      line-height: 1.4;
+      z-index: 10;
+    }
+
+    @keyframes flicker {
+      from { opacity: 0.85; }
+      to { opacity: 1; }
+    }
+
+    @keyframes shake {
+      0% { transform: translate(1px, 1px); }
+      25% { transform: translate(-2px, 1px); }
+      50% { transform: translate(2px, -1px); }
+      75% { transform: translate(-1px, -2px); }
+      100% { transform: translate(1px, -1px); }
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding-top: 12px;
+      }
+
+      .warning-box {
+        margin-top: 20px;
+      }
+
+      .fake-terminal {
+        line-height: 1.45;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .warning-box,
+      h1,
+      .blink {
+        animation: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="warning-box">
+    <div class="skull">☠️</div>
+    <h1>Your Data Has Been Stolen!</h1>
 
-    <div class="web-page">
-
-<!---->
-
-        <!-- * navbar -->
-
-        <header class="navbar">
-            <a id="logo">FЯED.</a>
-
-            <ul class="navitems">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-
-            <button id="menu-bars">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <button id="menu-x">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-        </header>
-
-        <section>
-
-            <ul>
-
-                <li>
-                    <button>
-                        <a href="#">Home</a>
-                    </button>
-                </li>
-
-                <li>
-                    <button>
-                        <a href="#">About</a>
-                    </button>
-                </li>
-
-                <li>
-                    <button>
-                        <a href="#">Portfolio</a>
-                    </button>
-                </li>
-
-                <li>
-                    <button>
-                        <a href="#">Blog</a>
-                    </button>
-                </li>
-
-                <li>
-                    <button>
-                        <a href="#">Contact</a>
-                    </button>
-                </li>
-
-            </ul>
-
-        </section>
-
-<!---->
-
-        <!-- * content -->
-
-        <div class="content"></div>
-
-<!---->
-
-        <!-- * footer -->
-
-        <footer>
-
-            <p>&copy; 2026 Fred Mathis. All Rights Reserved.</p>
-
-        </footer>
-
-<!---->
-
+    <div class="fake-terminal">
+      &gt; Accessing personal files...<br>
+      &gt; Downloading passwords...<br>
+      &gt; Uploading browser history...<br>
+      &gt; Encrypting homework folder...<br>
+      &gt; Status: <span class="blink">COMPLETE_</span>
     </div>
-    
+  </main>
+
+  <div class="reassurance">
+    Don’t worry — this is only a cybersecurity awareness demonstration.
+    Your data has not actually been stolen.
+  </div>
 </body>
 </html>
